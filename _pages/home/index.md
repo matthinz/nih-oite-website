@@ -2,10 +2,17 @@
 title: Home
 public: true
 expires_at: ""
-updated_at: 2022-04-26T00:00:00.000Z
+updated_by: matthinz@gmail.com
+updated_at: 2022-05-05T16:57:13.533Z
 ---
 This is the home page!
 
-{::video url="https://www.youtube.com/watch?v=SAK117AmzSE" alt="" /}
+{::columns type="two-columns"}
+{::column}Left column{:/column}
+{::column}**right** column!{:/column}
+{:/columns}
 
-{::content_block slug="hours-location/block" /}
+{::columns type="two-columns"}
+{::column}{:/column}
+{::column}{:/column}
+{:/columns}
