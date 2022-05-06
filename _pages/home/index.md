@@ -2,8 +2,10 @@
 title: Home
 public: true
 expires_at: ""
+sidebar:
+  - block: hours-location/block
 updated_by: matthinz@gmail.com
-updated_at: 2022-05-06T19:12:00.552Z
+updated_at: 2022-05-06T19:12:41.833Z
 ---
 This is the home page!
 
