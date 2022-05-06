@@ -3,7 +3,7 @@ title: Home
 public: true
 expires_at: ""
 updated_by: matthinz@gmail.com
-updated_at: 2022-05-06T16:47:17.733Z
+updated_at: 2022-05-06T16:50:02.045Z
 ---
 This is the home page!
 
@@ -19,10 +19,8 @@ Here is more content{:/column}
 I'm going to put some text in here!
 
 {::columns type="undefined"}
-{::column}I wonder waha{:/column}
-{::column}x{:/column}
-{::column}> This is a quote that I'm p
->
-> putting in here{:/column}
-{::column}c{:/column}
+{::column}First column of my 4-column layout{:/column}
+{::column}Second column{:/column}
+{::column}> Third column!{:/column}
+{::column}Fourth column!!{:/column}
 {:/columns}
