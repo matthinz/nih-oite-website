@@ -3,7 +3,7 @@ title: Home
 public: true
 expires_at: ""
 updated_by: matthinz@gmail.com
-updated_at: 2022-05-06T17:15:44.535Z
+updated_at: 2022-05-06T17:17:52.729Z
 ---
 This is the home page!
 
@@ -21,6 +21,6 @@ I'm going to put some text in here!
 {::columns type="columns-4"}
 {::column}First column of my 4-column layout{:/column}
 {::column}Second column{:/column}
-{::column}> Third column!{:/column}
+{::column}> *Third* column!{:/column}
 {::column}Fourth column!!{:/column}
 {:/columns}
