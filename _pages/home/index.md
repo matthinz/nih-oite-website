@@ -2,10 +2,25 @@
 title: Home
 public: true
 expires_at: ""
-updated_at: 2022-04-26T00:00:00.000Z
+updated_by: matthinz@gmail.com
+updated_at: 2022-05-06T17:17:52.729Z
 ---
 This is the home page!
 
-{::video url="https://www.youtube.com/watch?v=SAK117AmzSE" alt="" /}
+{::columns type="columns-2"}
+{::column}Left column
 
-{::content_block slug="hours-location/block" /}
+![](/images/720678.jpg){:/column}
+{::column}**right** column!
+
+Here is more content{:/column}
+{:/columns}
+
+I'm going to put some text in here!
+
+{::columns type="columns-4"}
+{::column}First column of my 4-column layout{:/column}
+{::column}Second column{:/column}
+{::column}> *Third* column!{:/column}
+{::column}Fourth column!!{:/column}
+{:/columns}
