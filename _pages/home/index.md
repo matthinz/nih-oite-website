@@ -2,10 +2,16 @@
 title: Home
 public: true
 expires_at: ""
-updated_at: 2022-04-26T00:00:00.000Z
+updated_by: matthinz@gmail.com
+updated_at: 2022-05-09T20:05:12.177Z
 ---
 This is the home page!
 
-{::video url="https://www.youtube.com/watch?v=SAK117AmzSE" alt="" /}
+{::columns span="6,6"}
+{::column}
+![](/images/spelunking.png)
+{:/column}
+{::column}
 
-{::content_block slug="hours-location/block" /}
+{:/column}
+{:/columns}
