@@ -4,15 +4,3 @@
 @import "uswds-tweaks.scss";
 @import "video.scss";
 @import "netlify-preview.scss";
-
-.nih-sidebar {
-  border: 1px solid color("primary");
-
-  & > div {
-    border-bottom: 1px solid color("gray-50");
-
-    &:last-child {
-      border-bottom: none;
-    }
-  }
-}
