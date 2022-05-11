@@ -2,6 +2,11 @@
 title: About the program
 public: true
 order: 0
+expires_at: ""
+sidebar:
+  - block: hours-location/block
+updated_by: matthinz@gmail.com
+updated_at: 2022-05-11T16:47:22.009Z
 ---
 
 # Postbac Research Training Program
