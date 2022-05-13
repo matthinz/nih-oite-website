@@ -9,7 +9,7 @@ lifecycle:
 access:
   public: true
 updated_by: matthinz@gmail.com
-updated_at: 2022-05-13T20:13:31.153Z
+updated_at: 2022-05-13T20:14:37.474Z
 ---
 # After you apply
 
@@ -42,5 +42,6 @@ The decision to come to the NIH as a postbac is an important one.  You are comm
 
 Watch on [OITE’s YouTube channel](https://www.youtube.com/c/NIHOITE/featured):
 
-* [Find an NIH mentor: Covers how to use NIH investigator databases](https://www.youtube.com/watch?v=W0m2_yPPMPE)
-* [Find your research home: Helps you select a mentor and research group](https://www.youtube.com/watch?v=ho1Wm8eL6CY)
+{::video url="https://www.youtube.com/watch?v=W0m2_yPPMPE" alt="Find an NIH mentor: Covers how to use NIH investigator databases" /}
+
+{::video url="https://www.youtube.com/watch?v=ho1Wm8eL6CY" alt="* [Find your research home: Helps you select a mentor and research group](https://www.youtube.com/watch?v=ho1Wm8eL6CY)" /}
