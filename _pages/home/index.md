@@ -3,7 +3,7 @@ title: Home
 public: true
 expires_at: ""
 updated_by: matthinz@gmail.com
-updated_at: 2022-05-13T18:46:34.641Z
+updated_at: 2022-05-13T18:49:01.210Z
 ---
 This is the home page!
 
@@ -12,12 +12,16 @@ This is the home page!
 
 left column
 
-{::video url="https%3A//www.youtube.com/watch%3Fv%3DSAK117AmzSE" alt=""/}
+{::video url="https://www.youtube.com/watch?v=SAK117AmzSE" alt=""/}
 
 {:/column}
 {::column}
 
+
+
 right column
+
+
 
 {:/column}
 {:/columns}
