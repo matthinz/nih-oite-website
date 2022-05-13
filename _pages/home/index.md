@@ -3,20 +3,24 @@ title: Home
 public: true
 expires_at: ""
 updated_by: matthinz@gmail.com
-updated_at: 2022-05-13T18:48:49.534Z
+updated_at: 2022-05-13T18:49:01.210Z
 ---
 This is the home page!
 
 {::columns span="6,6"}
 {::column}
+
 left column
 
-{::video url="https://www.youtube.com/watch?v=SAK117AmzSE" alt="" /}
+{::video url="https://www.youtube.com/watch?v=SAK117AmzSE" alt=""/}
+
 {:/column}
 {::column}
 
 
+
 right column
+
 
 
 {:/column}
