@@ -57,6 +57,7 @@ Learn about NIH opportunities for early career biomedical researchers. Find out 
 - [College students](#TODO)
 - [High school students](#TODO)
 - [All training programs](#TODO)
+{:class="usa-list usa-list--unstyled"}
 
 {:/column}
 {:/columns}
@@ -74,6 +75,7 @@ Find support services, register for required training, and connect with other tr
 - [Orientation sessions](#TODO)
 - [Meet other trainees](#TODO)
 - [More resources for getting started](#TODO)
+{:class="usa-list usa-list--unstyled"}
 
 {:/column}
 
@@ -103,6 +105,7 @@ Talk to a career counselor, search for a job, plan the next stage of your career
 - [Get help with interviews](#TODO)
 - [Search for a job](#TODO)
 - [More career planning resources](#TODO)
+{:class="usa-list usa-list--unstyled"}
 
 
 {:/column}
@@ -143,6 +146,7 @@ TODO: Blog headlines
 - [Find a mentor or become a mentor](#TODO)
 - [Build your wellness skills](#TODO)
 - [Upcoming wellness events](#TODO)
+{:class="usa-list usa-list--unstyled"}
 
 {:/column}
 
