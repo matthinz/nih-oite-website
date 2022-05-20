@@ -1,51 +1,58 @@
 ---
 title: Home
 hero:
-  enabled: true
   title: |
     Build your career,
     shape the future.
   image: /images/home/hero-fpo.jpg
-  image_2x: /images/home/hero-fpo@2x.jpg
-access:
-  public: true
+  image_2x: /images/homme/hero-fpo@2x.jpg
+  enabled: true
 lifecycle:
   expires_at: ""
-updated_at: 2022-04-26T00:00:00.000Z
+access:
+  public: true
+updated_by: matthinz@gmail.com
+updated_at: 2022-05-20T17:22:07.023Z
 ---
-
----
+- - -
 
 ## Updates and announcements
 
 {::columns span="6,6"}
 {::column}
+
 ### First announcement
 
 Clinical fellows and other health professionals affiliated with Duke or the NIH can earn a Master of Health Sciences in Clinical Research. Read more. The priority application deadline is April 15 for 2022-2023
 
 [More information about this announcement](#test)
 
+
 {:/column}
 {::column}
+
 
 ### Upcoming events
 
 (This will be a dynamic listing of upcoming events)
 
+
 {:/column}
 {:/columns}
 
----
+- - -
 
 {::columns span="6,6"}
 {::column}
 
+
 ![People working in a laboratory](/images/home/lab01.jpg)
+
 
 
 {:/column}
 {::column}
+
 
 ## Learn about NIH training programs
 
@@ -59,12 +66,13 @@ Learn about NIH opportunities for early career biomedical researchers. Find out 
 - [All training programs](#TODO)
 {:class="usa-list usa-list--unstyled"}
 
+
 {:/column}
 {:/columns}
 
 {::columns span="6,6"}
-
 {::column}
+
 
 ## Get started at NIH
 
@@ -77,25 +85,27 @@ Find support services, register for required training, and connect with other tr
 - [More resources for getting started](#TODO)
 {:class="usa-list usa-list--unstyled"}
 
-{:/column}
 
+{:/column}
 {::column}
+
 
 ![National Institutes of Health building](/images/home/nih01.jpg)
 
-{:/column}
 
+{:/column}
 {:/columns}
 
 {::columns span="6,6"}
-
 {::column}
+
 
 ![A scientist](/images/home/scientist01.jpg)
 
-{:/column}
 
+{:/column}
 {::column}
+
 
 ## Plan your career
 
@@ -108,15 +118,15 @@ Talk to a career counselor, search for a job, plan the next stage of your career
 {:class="usa-list usa-list--unstyled"}
 
 
-{:/column}
 
+{:/column}
 {:/columns}
 
----
+- - -
 
 TODO: Headshots / quotes
 
----
+- - -
 
 ## Blog
 
@@ -124,31 +134,28 @@ TODO: Blog headlines
 
 [Subscribe to the OITE careers blog](#TODO)
 
----
+- - -
 
+{::columns span="6,6"}
+{::column}
 ## Focus on wellness
 
-{::columns span="4,4"}
+### Get help now
 
-{::column}
-
-> ### Get help now
-> Are you stressed?
-> Let us help
-
+Are you stressed?
+Let us help
 {:/column}
-
 {::column}
+[Manage stress](#TODO)
 
-- [Manage stress](#TODO)
-- [Find a support group](#TODO)
-- [Practice self-care (journal, meditate, more ideas)](#TODO)
-- [Find a mentor or become a mentor](#TODO)
-- [Build your wellness skills](#TODO)
-- [Upcoming wellness events](#TODO)
-{:class="usa-list usa-list--unstyled"}
+[Find a support group](#TODO)
 
+[Practice self-care (journal, meditate, more ideas)](#TODO)
+
+[Find a mentor or become a mentor](#TODO)
+
+[Build your wellness skills](#TODO)
+
+[Upcoming wellness events](#TODO)
 {:/column}
-
 {:/columns}
-
