@@ -7,12 +7,13 @@ hero:
   image: /images/home/hero-fpo.jpg
   image_2x: /images/homme/hero-fpo@2x.jpg
   enabled: true
+sidebar: []
 lifecycle:
   expires_at: ""
 access:
   public: true
 updated_by: matthinz@gmail.com
-updated_at: 2022-05-20T17:23:45.232Z
+updated_at: 2022-05-20T17:24:27.006Z
 ---
 - - -
 
