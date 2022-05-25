@@ -13,6 +13,7 @@ collections:
     folder: "_events/"
     create: true
     slug: "{{date.year}}{{date.month}}{{date.day}}-{{slug}}"
+    summary: "{{date.year}}-{{date.month}}-{{date.day}} / {{title}}"
     fields:
       - {label: "Name", name: "title"}
       - label: "Event Date"
@@ -70,6 +71,9 @@ collections:
       - {label: "Description", name: "body", widget: "markdown"}
       - {name: "updated_by", label: "Last Updated By", hide_preview: true, required: false, widget: "readonly"}
       - {name: "updated_at", label: "Last Updated At", hide_preview: false, required: false, widget: "readonly"}
+    sortable_fields:
+      - date.year
+    view_filters: <%= raw JSON.generate [2021,2022].map { |year| { label: year.to_s, field: "date.year", pattern: year.to_s }} %>
 <% end %>
 <% if policy(:netlify).cms? %>
   - name: block

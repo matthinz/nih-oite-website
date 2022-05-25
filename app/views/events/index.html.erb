@@ -9,48 +9,46 @@
     <% if @from %>
       <%= form.hidden_field(nil, name: "from", value: @from) %>
     <% end %>
-    <fieldset class="usa-fieldset">
-      <legend class="usa-legend"><h3>Filter by audience</h3></legend>
-      <% @audiences.each do |audience| %>
-        <div class="usa-checkbox">
-          <input
-            class="usa-checkbox__input"
-            id="filter-<%= audience.parameterize %>"
-            type="checkbox"
-            name="audience[]"
-            value="<%= audience %>"
-            <%= if @selected_audiences.include?(audience) then "checked" end %>
-            data-submit-form-on-click
-          />
-          <label class="usa-checkbox__label" for="filter-<%= audience.parameterize %>">
-            <%= audience %>
-          </label>
+
+    <div class="usa-accordion usa-accordion--multiselectable" data-allow-multiple>
+      <% @event_filters.each do |filter| %>
+        <input
+          id="<%= filter.name %>-accordion-input"
+          type="hidden"
+          name="accordion[<%= filter.name %>]"
+        >
+        <h4 class="usa-accordion__heading">
+          <button
+            class="usa-accordion__button"
+            aria-expanded="<%= @selected_filters[filter.name].length > 0 || @open_accordions[filter.name] %>"
+            aria-controls="<%= filter.name %>-accordion-content"
+            data-accordion-state-input="<%= filter.name %>-accordion-input"
+          >
+            <%= filter.name.titleize.capitalize %>
+          </button>
+        </h4>
+        <div id="<%= filter.name %>-accordion-content" class="usa-accordion__content">
+          <% filter.options.each do |option| %>
+            <div class="usa-checkbox">
+              <input
+                class="usa-checkbox__input"
+                id="filter-<%= filter.name %>-<%= option.value.parameterize %>"
+                type="checkbox"
+                name="<%= filter.name %>[]"
+                value="<%= option.value %>"
+                data-submit-form-on-click
+                <%= "checked" if @selected_filters[filter.name].include?(option) %>
+              />
+              <label class="usa-checkbox__label" for="filter-<%= filter.name %>-<%= option.value.parameterize %>">
+                <%= option.label %>
+              </label>
+            </div>
+          <% end %>
         </div>
       <% end %>
-    </fieldset>
-    <fieldset class="usa-fieldset">
-      <legend class="usa-legend"><h3>Filter by topic</h3></legend>
-      <% @topics.each do |topic| %>
-        <div class="usa-checkbox">
-          <input
-            class="usa-checkbox__input"
-            id="filter-topic-<%= topic.parameterize %>"
-            type="checkbox"
-            name="topic[]"
-            value="<%= topic %>"
-            <%= if @selected_topics.include?(topic) then "checked" end %>
-            data-submit-form-on-click
-          />
-          <label class="usa-checkbox__label" for="filter-topic-<%= topic.parameterize %>">
-            <%= topic %>
-          </label>
-        </div>
-      <% end %>
-    </fieldset>
+    </div>
   <% end %>
 <% end %>
-
-
 
 <% if !@events.empty? %>
   <ul class="usa-collection oite-events">

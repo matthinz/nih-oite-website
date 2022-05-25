@@ -1,12 +1,27 @@
 class Event
   include NetlifyContent
 
-  def self.all(from: nil, base: Rails.root.join("_events"))
+  def self.all(from: nil, filters: nil, base: Rails.root.join("_events"))
     from ||= Date.today
 
     events = super base: base, from: from
 
-    events.select { |event| event.date >= from }.sort_by(&:date)
+    events = events.select do |event|
+      in_date_range = event.date >= from
+
+      matches_filters = filters.nil? || filters.keys.all? { |filter_name|
+        allowed_options = filters[filter_name]
+        allowed_options.empty? || allowed_options.all? { |option|
+          values = event.send(filter_name)
+          values = [values] unless values.is_a?(Enumerable)
+          values.include? option.value
+        }
+      }
+
+      in_date_range && matches_filters
+    end
+
+    events.sort_by(&:date)
   end
 
   def self.should_parse_content_file(file, from:)
@@ -34,14 +49,24 @@ class Event
     Date.new year, month, day
   end
 
-  def self.audiences(file = Rails.root.join("_settings/audiences.yml"))
+  def self.audiences(file = Rails.root.join("_settings/event_audiences.yml"))
     data = YAML.safe_load File.read(file), fallback: {}
-    data["audiences"] || []
+    data["event_audiences"] || []
   end
 
-  def self.topics(file = Rails.root.join("_settings/topics.yml"))
+  def self.locations(file = Rails.root.join("_settings/event_locations.yml"))
     data = YAML.safe_load File.read(file), fallback: {}
-    data["topics"] || []
+    data["event_locations"] || []
+  end
+
+  def self.topics(file = Rails.root.join("_settings/event_topics.yml"))
+    data = YAML.safe_load File.read(file), fallback: {}
+    data["event_topics"] || []
+  end
+
+  def self.types(file = Rails.root.join("_settings/event_types.yml"))
+    data = YAML.safe_load File.read(file), fallback: {}
+    data["event_types"] || []
   end
 
   def self.find_by_path(path, base: Rails.root.join("_events"), try_index: false)
@@ -49,10 +74,14 @@ class Event
   end
 
   attr_reader :filename
-  has_field :title
-  has_field :speakers, :audience, default: []
+  has_field :title, :type, :location
+  has_field :speakers, :audience, :required_for, default: []
   has_field :accommodations, default: {}
   has_field :topic, default: []
+
+  # XXX: Originally we had a single "audience" field, this was refined into
+  #      open_to and required_for
+  alias_method :open_to, :audience
 
   def initialize(path, base: nil)
     @filename = path.basename(".md")
