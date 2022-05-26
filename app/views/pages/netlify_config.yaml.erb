@@ -12,35 +12,29 @@ collections:
     label: "Event"
     folder: "_events/"
     create: true
-    slug: "{{date.year}}{{date.month}}{{date.day}}-{{slug}}"
-    summary: "{{date.year}}-{{date.month}}-{{date.day}} / {{title}}"
+    slug: "{{date | date('YYYY-MM-DD')}}-{{slug}}"
+    summary: "{{date | date('YYYY-MM-DD')} / {{title}}"
     fields:
       - {label: "Name", name: "title"}
       - label: "Event Date"
         name: "date"
-        widget: "object"
-        summary: "{{fields.month}} / {{fields.day}} / {{fields.year}}"
-        fields:
-          - label: "Month"
-            name: month
-            widget: select
-            options:
-              - {label: "January", value: 1}
-              - {label: "February", value: 2}
-              - {label: "March", value: 3}
-              - {label: "April", value: 4}
-              - {label: "May", value: 5}
-              - {label: "June", value: 6}
-              - {label: "July", value: 7}
-              - {label: "August", value: 8}
-              - {label: "September", value: 9}
-              - {label: "October", value: 10}
-              - {label: "November", value: 11}
-              - {label: "December", value: 12}
-          - {label: "Day", name: day, widget: number, min: 1, max: 31}
-          - {label: "Year", name: year, widget: number}
-      - {label: "Start Time", name: "start", widget: "string", pattern: ['\d{1,2}:\d{1,2} (?:AM|am|PM|pm)', '"hour:minute am/pm"']}
-      - {label: "End Time", name: "end", widget: "string", pattern: ['\d{1,2}:\d{1,2} (?:AM|am|PM|pm)', '"hour:minute am/pm"']}
+        widget: "datetime"
+        time_format: fals
+      - label: "Start Time"
+        name: "start"
+        widget: "string"
+        pattern:
+          - '\d{1,2}:\d{1,2} (?:AM|am|PM|pm)'
+          - '"hour:minute am/pm"'
+      - label: "End Time"
+        name: "end"
+        widget: "string"
+        pattern:
+          - '\d{1,2}:\d{1,2} (?:AM|am|PM|pm)'
+          - '"hour:minute am/pm"'
+      - label: "Description"
+        name: "body"
+        widget: "markdown"
       - label: "Speakers"
         name: "speakers"
         widget: list
@@ -54,21 +48,27 @@ collections:
         required: false
         multiple: true
         options: <%= raw JSON.generate Event.topics %>
-      - label: "Intended Audience"
-        name: "audience"
+      - label: "Open to"
+        name: "open_to"
+        widget: "select"
+        required: false
+        multiple: true
+        options: <%= raw JSON.generate(Event.audiences) %>
+      - label: "Required for"
+        name: "required_for"
         widget: "select"
         required: false
         multiple: true
         options: <%= raw JSON.generate(Event.audiences) %>
       - label: "Reasonable Accommodations Point of Contact"
         name: accommodations
+        collapsed: true
         widget: "object"
         summary: "{{fields.name}} <{{fields.email}}> ({{fields.phone}})"
         fields:
           - {label: "Name", name: name}
           - {label: "Email", name: email, required: false}
           - {label: "Phone Number", name: phone, required: false}
-      - {label: "Description", name: "body", widget: "markdown"}
       - {name: "updated_by", label: "Last Updated By", hide_preview: true, required: false, widget: "readonly"}
       - {name: "updated_at", label: "Last Updated At", hide_preview: false, required: false, widget: "readonly"}
     sortable_fields:

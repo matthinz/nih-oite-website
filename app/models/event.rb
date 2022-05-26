@@ -9,16 +9,25 @@ class Event
     events = events.select do |event|
       in_date_range = event.date >= from
 
-      matches_filters = filters.nil? || filters.keys.all? { |filter_name|
-        allowed_options = filters[filter_name]
-        allowed_options.empty? || allowed_options.all? { |option|
-          values = event.send(filter_name)
-          values = [values] unless values.is_a?(Enumerable)
-          values.include? option.value
-        }
-      }
+      next false unless in_date_range
 
-      in_date_range && matches_filters
+      filters.nil? || filters.keys.all? { |filter_name|
+        next true if filters[filter_name].length == 0
+
+        value = event.send(filter_name)
+
+        if value.is_a?(Enumerable)
+          # For multi-value fields, match if _all_ of the filter options match
+          required_options = filters[filter_name]
+          required_options.all? { |option|
+            value.any? { |value| value == option.value }
+          }
+        else
+          # For single-value fields, match if the field value is one of the
+          # filters we're using
+          filters[filter_name].any? { |option| option.value == value }
+        end
+      }
     end
 
     events.sort_by(&:date)
@@ -75,13 +84,9 @@ class Event
 
   attr_reader :filename
   has_field :title, :type, :location
-  has_field :speakers, :audience, :required_for, default: []
+  has_field :speakers, :open_to, :required_for, default: []
   has_field :accommodations, default: {}
   has_field :topic, default: []
-
-  # XXX: Originally we had a single "audience" field, this was refined into
-  #      open_to and required_for
-  alias_method :open_to, :audience
 
   def initialize(path, base: nil)
     @filename = path.basename(".md")

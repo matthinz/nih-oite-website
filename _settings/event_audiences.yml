@@ -1,6 +1,8 @@
 event_audiences:
-  - Summer Interns
+  - Graduate students
+  - NIH-only
+  - NIH staff scientists/clinicians
   - Postbacs
-  - Graduate Students
-  - Postdocs/Fellows
-  - NIH Staff Scientist/Staff Clinician
+  - Postdocs/fellows
+  - Public
+  - Summer interns

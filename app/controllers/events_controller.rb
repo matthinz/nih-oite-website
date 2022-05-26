@@ -2,8 +2,6 @@ class EventsController < ApplicationController
   include VideoEmbeddable
 
   def index
-    puts params.inspect
-
     @event_filters = [
       EventFilter.new(
         "type",
@@ -40,7 +38,9 @@ class EventsController < ApplicationController
     @selected_filters = {}
     @event_filters.each do |filter|
       @selected_filters[filter.name] = (params[filter.name] || [])
-        .map { |value| filter.options.find { |opt| opt.value == value } }
+        .map { |value|
+          filter.options.find { |opt| opt.value == value }
+        }
         .select { |option| !option.nil? }
     end
 
