@@ -18,7 +18,9 @@ Prerequisite: install the `jq` JSON processor: `brew install jq`
 
 The bootstrap module is used to create an s3 bucket for later terraform runs to store their state in.
 
-### Bootstrapping the state storage s3 buckets for the first time
+### Bootstrapping the state storage S3 buckets for the first time
+
+From the `bootstrap` directory:
 
 1. Run `terraform init`
 1. Run `./run.sh plan` to verify that the changes are what you expect
