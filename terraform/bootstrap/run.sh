@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 if [[ ! -f "secrets.auto.tfvars" ]]; then
-  ../create_space_deployer.sh ryan.ahearn config-bootstrap-deployer > secrets.auto.tfvars
+  ../create_space_deployer.sh matt.hinz config-bootstrap-deployer > secrets.auto.tfvars
 fi
 
 if [[ $# -gt 0 ]]; then

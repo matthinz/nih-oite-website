@@ -10,7 +10,7 @@ module "s3" {
   cf_user         = var.cf_user
   cf_password     = var.cf_password
   cf_org_name     = "sandbox-gsa"
-  cf_space_name   = "ryan.ahearn"
+  cf_space_name   = "matt.hinz"
   s3_service_name = local.s3_service_name
   s3_plan_name    = "basic-sandbox"
 }

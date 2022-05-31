@@ -15,8 +15,8 @@ applications:
     SEARCH_GOV_AFFILIATE: ((search_gov_affiliate))
     SITEMAP_LAST_MOD_OVERRIDE: ((sitemap_last_mod_override))
   routes:
-    - route: nih_oite_experiments-((env)).app.cloud.gov
-    - route: nih-oite-experiments-((env)).app.cloud.gov
+    - route: mh-nih_oite_experiments-((env)).app.cloud.gov
+    - route: mh-nih-oite-experiments-((env)).app.cloud.gov
   processes:
   - type: web
     instances: ((web_instances))

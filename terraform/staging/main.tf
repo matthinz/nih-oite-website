@@ -1,6 +1,6 @@
 locals {
   cf_org_name      = "sandbox-gsa"
-  cf_space_name    = "ryan.ahearn"
+  cf_space_name    = "matt.hinz"
   env              = "staging"
   recursive_delete = true
 }
@@ -32,7 +32,7 @@ data "cloudfoundry_app" "app" {
 }
 
 data "cloudfoundry_app" "gateway" {
-  name_or_id = "nih_oite_experiments-${local.env}-gateway"
+  name_or_id = "mh-nih_oite_experiments-${local.env}-gateway"
   space      = data.cloudfoundry_space.space.id
 }
 
